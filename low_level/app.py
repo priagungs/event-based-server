@@ -6,7 +6,7 @@ import os
 
 
 def readFile(path):
-    with open('../files' + path) as f:
+    with open(os.path.dirname(os.path.abspath(__file__)) + '\\..\\files\\' + path[1:]) as f:
         return f.read()
 
 def on_read(client, data, error):
@@ -14,9 +14,10 @@ def on_read(client, data, error):
         client.close()
         clients.remove(client)
         return
-    client.write(data)
     data_str = str(data)
-    print(readFile(data_str.split()[1]))
+    content = readFile(data_str.split()[1])
+    response = 'HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: {}\n\n{}'.format(len(content), content)
+    client.write(bytes(response, 'utf-8'))
 
 
 def on_connection(server, error):
