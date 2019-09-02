@@ -2,7 +2,12 @@ from __future__ import print_function
 
 import signal
 import pyuv
+import os
 
+
+def readFile(path):
+    with open('../files' + path) as f:
+        return f.read()
 
 def on_read(client, data, error):
     if data is None:
@@ -10,12 +15,16 @@ def on_read(client, data, error):
         clients.remove(client)
         return
     client.write(data)
+    data_str = str(data)
+    print(readFile(data_str.split()[1]))
+
 
 def on_connection(server, error):
     client = pyuv.TCP(server.loop)
     server.accept(client)
     clients.append(client)
     client.start_read(on_read)
+
 
 def signal_cb(handle, signum):
     [c.close() for c in clients]
