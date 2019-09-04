@@ -3,7 +3,7 @@ var fs = require('fs');
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'});
   console.log("Listening")
-  if(req.url === "/small"){
+  if (req.url === "/small") {
     fs.readFile('../files/small.html', function (error, pgResp) {
         if (error) {
             res.writeHead(404);
@@ -14,7 +14,7 @@ http.createServer(function (req, res) {
         }
         res.end();
     });
-  }else if(req.url === "/large"){
+  } else if (req.url === "/large") {
     fs.readFile('../files/large.html', function (error, pgResp) {
         if (error) {
             res.writeHead(404);

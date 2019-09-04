@@ -6,7 +6,7 @@ import os
 
 
 def readFile(path):
-    with open(os.path.dirname(os.path.abspath(__file__)) + '\\..\\files\\' + path[1:]) as f:
+    with open(os.path.dirname(os.path.abspath(__file__)) + '/../files/' + path[1:]) as f:
         return f.read()
 
 def on_read(client, data, error):
