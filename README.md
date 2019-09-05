@@ -184,10 +184,83 @@ Pengujian dilakukan dengan cara melakukan request sebanyak 10.000 kali, dengan b
 1. Program dengan low level library
    * HTML ukuran 500 bytes
    ```
-   
+   Server Software:
+   Server Hostname:        localhost
+   Server Port:            1234
+
+   Document Path:          /small.html
+   Document Length:        0 bytes
+
+   Concurrency Level:      10000
+   Time taken for tests:   16.580 seconds
+   Complete requests:      8991
+   Failed requests:        0
+   Total transferred:      767849 bytes
+   HTML transferred:       687129 bytes
+   Requests per second:    542.29 [#/sec] (mean)
+   Time per request:       18440.413 [ms] (mean)
+   Time per request:       1.844 [ms] (mean, across all concurrent requests)
+   Transfer rate:          45.23 [Kbytes/sec] received
+
+   Connection Times (ms)
+               min  mean[+/-sd] median   max
+   Connect:      421 2000 798.1   2136    3147
+   Processing:   450  697 139.7    698     933
+   Waiting:        0    0   0.0      0       0
+   Total:       1354 2697 660.9   2835    3597
+
+   Percentage of the requests served within a certain time (ms)
+   50%   2834
+   66%   3125
+   75%   3247
+   80%   3334
+   90%   3487
+   95%   3529
+   98%   3563
+   99%   3591
+   100%   3597 (longest request)
    ```
    * HTML ukuran 20 KB
+   ```
+   Server Software:
+   Server Hostname:        localhost
+   Server Port:            1234
 
+   Document Path:          /large.html
+   Document Length:        0 bytes
+
+   Concurrency Level:      10000
+   Time taken for tests:   5.898 seconds
+   Complete requests:      8991
+   Failed requests:        0
+   Total transferred:      20224396 bytes
+   HTML transferred:       20141658 bytes
+   Requests per second:    1524.31 [#/sec] (mean)
+   Time per request:       6560.349 [ms] (mean)
+   Time per request:       0.656 [ms] (mean, across all concurrent requests)
+   Transfer rate:          3348.43 [Kbytes/sec] received
+
+   Connection Times (ms)
+               min  mean[+/-sd] median   max
+   Connect:      428 2006 719.8   2122    3046
+   Processing:   194  324  77.5    321     462
+   Waiting:        0    0   0.0      0       0
+   Total:        622 2330 796.1   2444    3507
+
+   Percentage of the requests served within a certain time (ms)
+   50%   2443
+   66%   2809
+   75%   2998
+   80%   3145
+   90%   3323
+   95%   3408
+   98%   3478
+   99%   3493
+   100%   3507 (longest request)
+   ```
+
+   Catatan : Server berhenti beroperasi setelah menangani 8991 request.
+   
 2. Program dengan high level library
    * HTML ukuran 500 bytes
    ```
