@@ -1,10 +1,10 @@
 # IF4031 - Pengembangan Aplikasi Terdistribusi
 # Tugas 1 - Event Based Server
 Anggota Kelompok : 
-Luthfi Ahmad Mujahid Hadiana     13516051
-Priagung Satyagama               13516089
-Rifo Ahmad Genadi                13516111
-Muhammad Azka Widyanto           13516127
+   - Luthfi Ahmad Mujahid Hadiana     13516051
+   - Priagung Satyagama               13516089
+   - Rifo Ahmad Genadi                13516111
+   - Muhammad Azka Widyanto           13516127
 ## Metode Benchmark
 Tool Benchmarking yang digunakan adalah _ApacheBench_.
 Pengujian dilakukan dengan cara melakukan request sebanyak 10.000 kali, dengan banyaknya konkurensi 10.000 (sesuai c10k). Caranya, cukup memasukkan command :
